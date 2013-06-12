@@ -1,0 +1,33 @@
+﻿@model System.Int32
+
+@{
+    ViewBag.Title = "SimpleValue";
+}
+
+<h2>Simple Value</h2>
+
+@if (ViewBag.Number != null)
+{
+    <text>Result: </text> @ViewBag.Number
+}
+
+<ul>
+    @for (var i = 1; i < 11; i++)
+    {
+        <li>
+            @if (i == Model)
+            {
+                @i               
+            }
+            else
+            {
+                <span>Id </span>
+                @Html.ActionLink(i.ToString(), "SimpleValue", new {@id = i})
+                
+                <span>myId </span>
+                @Html.ActionLink(i.ToString(), "SimpleValue", new {@myId = i})
+            }
+        </li>
+    }    
+</ul>
+

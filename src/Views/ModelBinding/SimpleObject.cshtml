@@ -1,0 +1,19 @@
+﻿@model MvcConventions.ViewModels.ModelBindingSimpleVM
+@{
+    ViewBag.Title = "SimpleObject";
+}
+
+<h2>Example Simple</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Name)
+    @Html.EditorFor(m => m.Name)
+    <br />
+
+    @Html.LabelFor(m => m.Age)
+    @Html.EditorFor(m => m.Age)
+    <br />
+    
+    <input type="submit"/>
+}
